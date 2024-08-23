@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="type"
+            type="Integer" />
+
+        <variable
+            name="cmd"
+            type="com.mysafe.escale_demo.IWeighCmd" />
+
+        <variable
+            name="weightValue"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@{type==1?@drawable/wallpaper_2:@drawable/wallpaper_3}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#CC000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCmd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{weightValue}"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/glNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/glNumber" />
+
+        <Button
+            android:id="@+id/bt1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->cmd.enable()}"
+            android:text="@string/open"
+            app:layout_constraintBottom_toBottomOf="@id/glCmd"
+            app:layout_constraintEnd_toStartOf="@id/bt2"
+            app:layout_constraintHeight_percent="0.14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/glCmd"
+            app:layout_constraintWidth_percent="0.14" />
+
+        <Button
+            android:id="@+id/bt2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->cmd.release()}"
+            android:text="@string/close"
+            app:layout_constraintBottom_toBottomOf="@id/glCmd"
+            app:layout_constraintEnd_toStartOf="@id/bt3"
+            app:layout_constraintHeight_percent="0.14"
+            app:layout_constraintStart_toEndOf="@id/bt1"
+            app:layout_constraintTop_toTopOf="@id/glCmd"
+            app:layout_constraintWidth_percent="0.14" />
+
+        <Button
+            android:id="@+id/bt3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->cmd.startWeigh()}"
+            android:text="@string/start"
+            app:layout_constraintBottom_toBottomOf="@id/glCmd"
+            app:layout_constraintEnd_toStartOf="@id/bt4"
+            app:layout_constraintHeight_percent="0.14"
+            app:layout_constraintStart_toEndOf="@id/bt2"
+            app:layout_constraintTop_toTopOf="@id/glCmd"
+            app:layout_constraintWidth_percent="0.14" />
+
+        <Button
+            android:id="@+id/bt4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->cmd.stopWeigh()}"
+            android:text="@string/stop"
+            app:layout_constraintBottom_toBottomOf="@id/glCmd"
+            app:layout_constraintEnd_toStartOf="@id/bt5"
+            app:layout_constraintHeight_percent="0.14"
+            app:layout_constraintStart_toEndOf="@id/bt3"
+            app:layout_constraintTop_toTopOf="@id/glCmd"
+            app:layout_constraintWidth_percent="0.14" />
+
+        <Button
+            android:id="@+id/bt5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->cmd.setZero()}"
+            android:text="@string/set_zero"
+            app:layout_constraintBottom_toBottomOf="@id/glCmd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.14"
+            app:layout_constraintStart_toEndOf="@id/bt4"
+            app:layout_constraintTop_toTopOf="@id/glCmd"
+            app:layout_constraintWidth_percent="0.14" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

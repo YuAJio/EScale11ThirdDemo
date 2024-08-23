@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">麦赛科技电子秤对接DEMO_v11</string>
+    <string name="aidl_ways">使用AIDL方式获取重量</string>
+    <string name="own_ways">使用校准参数自读计算重量</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+    <string name="start">开始</string>
+    <string name="stop">暂停</string>
+    <string name="set_zero">置零</string>
+</resources>

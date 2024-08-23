@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="acty"
+            type="com.mysafe.escale_demo.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wallpaper_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#A1000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMenu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMenu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->acty.toAIDLActivity()}"
+            android:text="@string/aidl_ways"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@id/glMenu1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/glMenu1"
+            app:layout_constraintWidth_percent="0.8" />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->acty.toCusCalActivity()}"
+            android:text="@string/own_ways"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@id/glMenu2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/glMenu2"
+            app:layout_constraintWidth_percent="0.8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
